@@ -1,0 +1,9 @@
+/*
+!.gitignore
+!starship.toml
+!/fish/
+/fish/*
+!/fish/functions/
+!/nvim/
+nvim/lua/plugins/example.lua
+!/kitty/
