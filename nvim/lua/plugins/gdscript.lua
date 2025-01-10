@@ -1,3 +1,10 @@
+vim.api.nvim_create_autocmd({ "VimEnter", "BufReadPre", "FileType" }, {
+  pattern = { "*.gd" },
+  callback = function()
+    vim.opt_local.expandtab = false
+  end,
+})
+
 return {
   {
     "neovim/nvim-lspconfig",
