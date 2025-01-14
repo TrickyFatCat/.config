@@ -38,8 +38,7 @@ let mapleader = "\<SPACE>"
 "" Disable search highlight
 nnoremap <leader>/ :nohlsearch<CR>
 "" Update config
-"" Linux
-"" nnoremap <leader>sc :source ~/.config/.ideavimrc<CR>
+nnoremap <leader>sc :source ~/.config/.ideavimrc<CR>
 "" Toggle NERDTree
 "" Requires NERDTree plugin https://github.com/JetBrains/ideavim/wiki/NERDTree-support
 map <leader>ee :NERDTreeFocus<CR>
