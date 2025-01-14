@@ -1,1 +1,118 @@
 " .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+""
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'dbakker/vim-paragraph-motion'
+Plug 'easymotion/vim-easymotion'
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'justinmk/vim-sneak'
+
+" VIM CONFIG
+set number
+set relativenumber
+set smartcase
+set visualbell
+set ideajoin
+set hlsearch
+set showmode
+set incsearch
+set sneak
+set quickscope
+set NERDTree
+"" Which key setup
+set which-key
+set timeoutlen=5000
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" VIM REMAPS
+"" Remap leader key to space
+let mapleader = "\<SPACE>"
+"" Disable search highlight
+nnoremap <leader>/ :nohlsearch<CR>
+"" Update config
+"" Linux
+"" nnoremap <leader>sc :source ~/.config/.ideavimrc<CR>
+"" Toggle NERDTree
+"" Requires NERDTree plugin https://github.com/JetBrains/ideavim/wiki/NERDTree-support
+map <leader>ee :NERDTreeFocus<CR>
+map <leader>eq :NERDTreeClose<CR>
+"" Put search results in the middle of the screen
+nnoremap n nzz
+nnoremap N Nzz
+" Shortcut for copying to/from System Clipboard
+vmap <Leader>y "+y
+nmap <Leader>P "+P
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+" RUN/BUILD/DEBUG
+"" Start debug
+map <leader>dr <Action>(Debug)
+"" Stop debug
+map <leader>ds <Action>(Stop)
+"" Toggles line breakpoint
+map <leader>db <Action>(ToggleLineBreakpoint)
+"" Remove all breakpoints in file
+map <leader>dc <Action>(Debugger.RemoveAllBreakpointsInFile)
+"" Remove all breakpoints
+map <leader>dC <Action>(Debugger.RemoveAllBreakpoints)
+"" Build current project
+map <leader>b <Action>(BuildCurrentProject)
+"" Go to next error
+map <leader>x <Action>(GotoNextError)
+"" Go to previous error
+map <leader>X <Action>(GotoPreviousError)
+
+" CODE EDITING
+"" Rename Element
+map <leader>cr <Action>(RenameElement)
+"" Reformat Code
+map <leader>cf <Action>(ReformatCode)
+"" Open generation menu
+map <leader>cg <Action>(Generate)
+"" Open refactoring quick list
+map <leader>cl <Action>(Refactorings.QuickListPopupAction)
+"" Show interaction actions menu
+map <leader>cm <Action>(ShowIntentionActions)
+
+" USER INTERFACE AND NAVIGATION
+"" Toggle zen mode
+map <leader>uz <Action>(ToggleZenMode)
+"" Toggle distraction free mode
+map <leader>ud <Action>(ToggleDistractionFreeMode)
+"" Hide active window
+map <leader>uh <Action>(HideActiveWindow)
+"" Hide all windows
+map <leader>uH <Action>(HideAllWindows)
+"" Open terminal 
+map <C-/> <Action>(ActivateTerminalToolWindow)
+
+" SPLITTERS 
+"" Create vertical split
+nmap <Leader>sv :vsplit<CR>
+"" Create horizontal slit
+nmap <Leader>sh : split<CR>
+"" Next split
+map <leader>sn <Action>(NextSplitter)
+"" Previous slit
+map <leader>sp <Action>(PrevSplitter)
+"" Unsplit
+map <leader>su <Action>(Unsplit)
+
+" SEARCH
+"" Recent files
+map <leader><leader> <Action>(RecentFiles)
+"" Go to file
+map <leader>ff <Action>(GotoFile)
+"" Search everywhere
+map <leader>fe <Action>(SearchEverywhere)
+ 
