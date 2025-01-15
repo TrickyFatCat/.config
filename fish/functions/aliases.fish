@@ -9,3 +9,7 @@ end
 function q --wraps=exit --description 'alias q=exit'
     exit $argv
 end
+
+function vim --wraps=nvim --description 'alias vim=nvim'
+    nvim $argv
+end
