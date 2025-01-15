@@ -5,3 +5,4 @@
 !/nvim/
 nvim/lua/plugins/example.lua
 !/kitty/
+!/lazygit/
