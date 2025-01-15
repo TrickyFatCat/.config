@@ -2,7 +2,13 @@
 # If it doesn't have project file (*.godot) it will open project manager
 # Overwise the it will open project editor
 function godot --wraps=Godot_v4.3.x86_64 --description 'alias godot=Godot_v4.3.x86_64'
-    Godot_v4.3.x86_64 -e $argv
+    Godot_v4.3-stable_linux.x86_64 -e $argv
+end
+
+# Opens Godots tool
+# Requires Godots
+function godots --wraps='flatpak run io.github.MakovWait.Godots' --description 'alias godots=flatpak run io.github.MakovWait.Godots'
+    flatpak run io.github.MakovWait.Godots $argv
 end
 
 # Opens project, external text editor and git client of choice using for project
@@ -12,7 +18,7 @@ end
 #
 # You need Kitty terminal to run this command
 function gdedit
-    set -l godot Godot_v4.3.x86_64
+    set -l godot Godot_v4.3-stable_linux.x86_64
     set -l editor nvim
     set -l git_client lazygit
 
