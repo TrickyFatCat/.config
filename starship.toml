@@ -154,6 +154,8 @@ truncation_symbol = "…/"
 "Music" = "󰝚 Music"
 "Pictures" = " Pictures"
 "Videos" = " Videos"
+"Tools" = "󱁤 Tools"
+"Projects" = " Projects"
 
 [git_branch]
 symbol = ""
@@ -162,19 +164,19 @@ format = '[[ $symbol $branch ](fg:flamingo bg:surface1)]($style)'
 
 [git_status]
 conflicted = " "
-ahead = " +${count} "
-behind = " -${count} "
-diverged = "| +${count}| -${count} "
+ahead = '[ +${count} ](fg:green bg:surface2'
+behind = '[ -${count} ](fg:red bg:surface2'
+diverged = '[[|](fg:yellow bg:surface2)$ahead|$behind]'
 up_to_date = " "
-untracked = " "
-stashed = " "
-modified = " "
-staged = " "
+untracked = '[ ](fg:mauve bg:surface2)'
+stashed = '[ ](fg:yellow bg:surface2)'
+modified = '[ ](fg:peach bg:surface2)'
+staged = '[ ](fg:blue bg:surface2)'
 renamed = " "
-deleted = " "
+deleted = '[ ](fg:red bg:surface2)'
 typechanged = ""
-style = "bg:surface2"
-format = '[[ ($all_status$ahead_behind)](fg:teal bg:surface2)]($style)'
+style = "fg:teal bg:surface2"
+format = '[ $all_status$ahead_behind]($style)'
 
 [battery]
 disabled = false
