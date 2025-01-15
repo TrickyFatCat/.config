@@ -1,7 +1,7 @@
 # Opens Godot Engine in current directory 
 # If it doesn't have project file (*.godot) it will open project manager
 # Overwise the it will open project editor
-function godot --wraps=Godot_v4.3.x86_64 --description 'alias godot=Godot_v4.3.x86_64'
+function godot --wraps=Godot_v4.3-stable_linux.x86_64 --description 'alias godot=Godot_v4.3.x86_64'
     Godot_v4.3-stable_linux.x86_64 -e $argv
 end
 
