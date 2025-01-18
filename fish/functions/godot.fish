@@ -38,15 +38,14 @@ function gdedit
     if test (count $project_file) -gt 0
         pushd $project_path
 
-        set -l project_name (basename $project_file .godot)
-
         # Creates a new Kitty tab and runst text editor
-        kitten @launch --type=tab --dont-take-focus --cwd=current --title=$project_name $editor
+        kitten @launch --type=tab --dont-take-focus --cwd=current --title="Scripts" $editor
 
         # If directory is a repository. Then creates new Kitty tab and runs git client
         if test (count .git) -gt 0
             kitten @launch --type=tab --dont-take-focus --cwd=current --title="Git" $git_client
         end
+
         # Creates a new Kitty tab and runs Godot
         kitten @launch --type=tab --dont-take-focus --cwd=current --title="Godot" $godot -e --path $PWD
 
