@@ -10,3 +10,5 @@ nvim/lua/plugins/example.lua
 /godot/recent_dirs
 /godot/feature_profiles
 /godot/script_templates
+!/nushell
+/nushell/history.txt
