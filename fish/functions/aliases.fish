@@ -13,3 +13,7 @@ end
 function vim --wraps=nvim --description 'alias vim=nvim'
     nvim $argv
 end
+
+function open --wraps=nvim --description 'alias open=nvim'
+    nvim $argv
+end
