@@ -3,22 +3,24 @@
 add_newline = false
 
 format = """
-[](surface0)\
-[ ](bg:surface0 fg:mauve)\
+[](surface0)\
+[  ](bg:surface0 fg:mauve)\
 $directory\
-[█](fg:surface0 bg:surface1)\
+[](fg:surface0 bg:surface1)\
 $git_branch\
-[█](fg:surface1 bg:surface2)\
+$git_commit\
+[](fg:surface1 bg:surface2)\
 $git_status\
-[█](fg:surface2)\
+[](fg:surface2)\
 $fill\
-[█](fg:surface2)\
+[](fg:surface2)\
 $cmd_duration\
-[█](bg:surface2 fg:surface1)\
+$status\
+[](bg:surface2 fg:surface1)\
 $battery\
-[█](bg:surface1 fg:surface0)\
+[](bg:surface1 fg:surface0)\
 $time\
-[█](surface0)\
+[](surface0)\
 $line_break$character
 """
 
@@ -144,7 +146,7 @@ symbol = ' '
 read_only = " "
 read_only_style = "red"
 style = "fg:blue bg:surface0"
-format = "[$path]($style)"
+format = "[$path ]($style)"
 truncation_length = 3
 truncation_symbol = "../"
 
@@ -159,8 +161,16 @@ truncation_symbol = "../"
 
 [git_branch]
 symbol = ""
-style = "bg:surface1"
-format = '[[ $symbol $branch ](fg:flamingo bg:surface1)]($style)'
+style = "fg:flamingo bg:surface1"
+format = '[ $symbol $branch ]($style)'
+
+[git_commit]
+disabled = false
+only_detached = false
+tag_disabled = false
+style = "fg:maroon bg:surface1"
+tag_symbol = " 󱈤 "
+format = '[ $hash[$tag](fg:flamingo bg:surface1) ]($style)'
 
 [git_status]
 conflicted = '[$count󱪗 ](fg:red bg:surface2)'
@@ -176,12 +186,24 @@ renamed = '[$count󰤘 ]'
 deleted = '[$count󱪟 ](fg:red bg:surface2)'
 typechanged = "󰬲 "
 style = "fg:teal bg:surface2"
-format = '[ $all_status$ahead_behind]($style)'
+format = '[ $all_status$ahead_behind ]($style)'
+
+[cmd_duration]
+style = "bg:surface2 fg:sky"
+format = '[ $duration]($style)'
+
+[status]
+disabled = false
+symbol = '[ ](bg:surface2 fg:red)'
+success_symbol = '[ ](bg:surface2 fg:green)'
+recognize_signal_code = false
+style = "bg:surface2 fg:green"
+format = '[ $symbol ]($style)'
 
 [battery]
 disabled = false
 charging_symbol = "󰂄"
-format = '[$percentage $symbol ]($style)'
+format = '[ $percentage $symbol ]($style)'
 
 [[battery.display]]
 threshold = 5
@@ -241,8 +263,8 @@ discharging_symbol = '󰁹'
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:surface0"
-format = '[[$time](fg:text bg:surface0)]($style)'
+style = "fg:text bg:surface0"
+format = '[ $time   ]($style)'
 
 [line_break]
 disabled = false
@@ -255,7 +277,3 @@ vimcmd_symbol = '[ ](bold fg:green)'
 vimcmd_replace_one_symbol = '[ ](bold fg:lavender)'
 vimcmd_replace_symbol = '[ ](bold fg:lavender)'
 vimcmd_visual_symbol = '[ ](bold fg:lavender)'
-
-[cmd_duration]
-style = "bg:surface2 fg:sky"
-format = '[$duration   ]($style)'
