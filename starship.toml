@@ -174,8 +174,8 @@ format = '[ $hash[$tag](fg:flamingo bg:surface1) ]($style)'
 
 [git_status]
 conflicted = '[$count󱪗 ](fg:red bg:surface2)'
-ahead = '[+${count} ](fg:green bg:surface2'
-behind = '[-${count} ](fg:red bg:surface2'
+ahead = '[+${count} ](fg:green bg:surface2)'
+behind = '[-${count} ](fg:red bg:surface2)'
 diverged = '[ [|](fg:yellow bg:surface2)$ahead|$behind]'
 up_to_date = ""
 untracked = '[$count󰷊 ](fg:mauve bg:surface2)'
