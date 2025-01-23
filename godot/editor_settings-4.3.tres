@@ -17,8 +17,9 @@ physical_keycode = 86
 unicode = 107
 
 [resource]
-interface/editor/main_font = "/home/tricky_fat_cat/.local/share/fonts/Inter/InterVariable.ttf"
-interface/editor/code_font = "/home/tricky_fat_cat/.local/share/fonts/JetBrainsMono/JetBrainsMonoNerdFont-Regular.ttf"
+interface/editor/main_font = "/home/tricky_fat_cat/.local/share/fonts/Iosevka/IosevkaNerdFont-Regular.ttf"
+interface/editor/main_font_bold = "/home/tricky_fat_cat/.local/share/fonts/IosevkaTermSlab/IosevkaTermSlabNerdFont-ExtraBoldItalic.ttf"
+interface/editor/code_font = "/home/tricky_fat_cat/.local/share/fonts/Iosevka/IosevkaNerdFont-Regular.ttf"
 interface/theme/preset = "Custom"
 interface/theme/base_color = Color(0.117647, 0.117647, 0.180392, 1)
 interface/theme/accent_color = Color(0.796078, 0.65098, 0.968627, 1)
@@ -172,5 +173,8 @@ builtin_action_overrides = [{
 "name": "ui_up"
 }]
 metadata/script_setup_templates_dictionary = {
+"ConfigFile": "0ObjectEmpty",
+"Node": "0NodeDefault",
 "RigidBody2D": "0NodeDefault"
 }
+metadata/export_template_download_directory = "/home/tricky_fat_cat/.cache/godot"
