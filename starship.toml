@@ -1,24 +1,24 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-add_newline = true
+add_newline = false
 
 format = """
 [](surface0)\
-[󰄛 ](bg:surface0 fg:mauve)\
+[ ](bg:surface0 fg:mauve)\
 $directory\
-[](fg:surface0 bg:surface1)\
+[█](fg:surface0 bg:surface1)\
 $git_branch\
-[](fg:surface1 bg:surface2)\
+[█](fg:surface1 bg:surface2)\
 $git_status\
-[](fg:surface2)\
+[█](fg:surface2)\
 $fill\
-[](fg:surface2)\
+[█](fg:surface2)\
 $cmd_duration\
-[](bg:surface2 fg:surface1)\
+[█](bg:surface2 fg:surface1)\
 $battery\
-[](bg:surface1 fg:surface0)\
+[█](bg:surface1 fg:surface0)\
 $time\
-[](surface0)\
+[█](surface0)\
 $line_break$character
 """
 
@@ -144,9 +144,9 @@ symbol = ' '
 read_only = " "
 read_only_style = "red"
 style = "fg:blue bg:surface0"
-format = "[$path ]($style)"
+format = "[$path]($style)"
 truncation_length = 3
-truncation_symbol = "…/"
+truncation_symbol = "../"
 
 [directory.substitutions]
 "Documents" = "󰈙 Documents"
@@ -163,86 +163,86 @@ style = "bg:surface1"
 format = '[[ $symbol $branch ](fg:flamingo bg:surface1)]($style)'
 
 [git_status]
-conflicted = " "
-ahead = '[ +${count} ](fg:green bg:surface2'
-behind = '[ -${count} ](fg:red bg:surface2'
-diverged = '[[|](fg:yellow bg:surface2)$ahead|$behind]'
-up_to_date = " "
-untracked = '[ ](fg:mauve bg:surface2)'
-stashed = '[ ](fg:yellow bg:surface2)'
-modified = '[ ](fg:peach bg:surface2)'
-staged = '[ ](fg:blue bg:surface2)'
-renamed = " "
-deleted = '[ ](fg:red bg:surface2)'
-typechanged = ""
+conflicted = '[$count󱪗 ](fg:red bg:surface2)'
+ahead = '[+${count} ](fg:green bg:surface2'
+behind = '[-${count} ](fg:red bg:surface2'
+diverged = '[ [|](fg:yellow bg:surface2)$ahead|$behind]'
+up_to_date = ""
+untracked = '[$count󰷊 ](fg:mauve bg:surface2)'
+stashed = '[$count󰥥 ](fg:yellow bg:surface2)'
+modified = '[$count󰷈 ](fg:peach bg:surface2)'
+staged = '[$count󱪝 ](fg:blue bg:surface2)'
+renamed = '[$count󰤘 ]'
+deleted = '[$count󱪟 ](fg:red bg:surface2)'
+typechanged = "󰬲 "
 style = "fg:teal bg:surface2"
 format = '[ $all_status$ahead_behind]($style)'
 
 [battery]
 disabled = false
-charging_symbol = "󱐋 "
-format = '[ $symbol$percentage ]($style)'
+charging_symbol = "󰂄"
+format = '[$percentage $symbol ]($style)'
 
 [[battery.display]]
 threshold = 5
 style = "bg:surface1 fg:red"
-discharging_symbol = '󱉝 '
+discharging_symbol = '󰂃'
 
 [[battery.display]]
 threshold = 10
 style = "bg:surface1 fg:red"
-discharging_symbol = '󰁺 '
+discharging_symbol = '󰁺'
 
 [[battery.display]]
 threshold = 20
 style = "bg:surface1 fg:red"
-discharging_symbol = '󰁻 '
+discharging_symbol = '󰁻'
 
 [[battery.display]]
 threshold = 30
 style = "bg:surface1 fg:red"
-discharging_symbol = '󰁼 '
+discharging_symbol = '󰁼'
 
 [[battery.display]]
 threshold = 40
 style = "bg:surface1 fg:peach"
-discharging_symbol = '󰁽 '
+discharging_symbol = '󰁽'
 
 [[battery.display]]
 threshold = 50
 style = "bg:surface1 fg:peach"
-discharging_symbol = '󰁾 '
+discharging_symbol = '󰁾'
 
 [[battery.display]]
 threshold = 60
 style = "bg:surface1 fg:yellow"
-discharging_symbol = '󰁿 '
+discharging_symbol = '󰁿'
 
 [[battery.display]]
 threshold = 70
 style = "bg:surface1 fg:yellow"
-discharging_symbol = '󰂀 '
+discharging_symbol = '󰂀'
 
 [[battery.display]]
 threshold = 80
 style = "bg:surface1 fg:green"
-discharging_symbol = '󰂁 '
+discharging_symbol = '󰂁'
 
 [[battery.display]]
 threshold = 90
 style = "bg:surface1 fg:green"
-discharging_symbol = '󰂂 '
+discharging_symbol = '󰂂'
 
 [[battery.display]]
 threshold = 100
 style = "bg:surface1 fg:green"
-discharging_symbol = '󰁹 '
+discharging_symbol = '󰁹'
 
 [time]
 disabled = false
 time_format = "%R"
 style = "bg:surface0"
-format = '[[ $time](fg:text bg:surface0)]($style)'
+format = '[[$time](fg:text bg:surface0)]($style)'
 
 [line_break]
 disabled = false
@@ -258,4 +258,4 @@ vimcmd_visual_symbol = '[ ](bold fg:lavender)'
 
 [cmd_duration]
 style = "bg:surface2 fg:sky"
-format = '[ $duration ]($style)'
+format = '[$duration   ]($style)'
