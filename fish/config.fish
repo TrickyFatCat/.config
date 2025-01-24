@@ -14,3 +14,4 @@ end
 
 fish_add_path -g ~/Tools/GodotEngine/bin/
 fish_add_path -g ~/Tools/OdinLang/
+fish_add_path -g ~/Apps/teamspeak-client/

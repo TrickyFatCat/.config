@@ -4,7 +4,7 @@ add_newline = false
 
 format = """
 [](surface0)\
-[  ](bg:surface0 fg:mauve)\
+[   ](bg:surface0 fg:mauve)\
 $directory\
 [](fg:surface0 bg:surface1)\
 $git_branch\
@@ -201,7 +201,7 @@ format = '[ $symbol ]($style)'
 
 [battery]
 disabled = false
-charging_symbol = "󰂄"
+charging_symbol = '󰂄'
 format = '[ $percentage $symbol ]($style)'
 
 [[battery.display]]
