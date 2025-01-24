@@ -4,7 +4,7 @@ add_newline = false
 
 format = """
 [](surface0)\
-[   ](bg:surface0 fg:mauve)\
+$shell\
 $directory\
 [](fg:surface0 bg:surface1)\
 $git_branch\
@@ -140,6 +140,17 @@ crust = "#11111b"
 [fill]
 disabled = false
 symbol = ' '
+
+[shell]
+disabled = false
+bash_indicator = " "
+fish_indicator = " "
+zsh_indicator = " "
+nu_indicator = "󰄛 "
+powershell_indicator = " "
+cmd_indicator = " "
+style = "fg:mauve bg:surface0"
+format = "[ $indicator ]($style)"
 
 [directory]
 read_only = " "
