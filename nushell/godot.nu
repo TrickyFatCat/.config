@@ -1,3 +1,6 @@
+def --wrapped godot [...args] {
+  Godot_v4.3-stable_linux.x86_64 ...$args
+}
 
 def gdedit [project_path: path = "."] {
   let project_file = ls $project_path | find project.godot | get name
