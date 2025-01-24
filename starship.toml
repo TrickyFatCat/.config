@@ -21,8 +21,7 @@ $battery\
 [](bg:surface1 fg:surface0)\
 $time\
 [](surface0)\
-$line_break$character
-"""
+$line_break$character"""
 
 palette = 'catppuccin_mocha'
 
