@@ -9,6 +9,7 @@ $directory\
 [](fg:surface0 bg:surface1)\
 $git_branch\
 $git_commit\
+$pijul_channel\
 [](fg:surface1 bg:surface2)\
 $git_status\
 [](fg:surface2)\
@@ -202,6 +203,12 @@ deleted = '[$count󱪟 ](fg:red bg:surface2)'
 typechanged = '󰬲 '
 style = 'fg:teal bg:surface2'
 format = '[ $all_status$ahead_behind ]($style)'
+
+[pijul_channel]
+disabled = false
+symbol = ''
+style = 'fg:flamingo bg:surface1'
+format = '[ $symbol $channel ]($style)'
 
 [cmd_duration]
 style = 'bg:surface2 fg:sky'
