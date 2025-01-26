@@ -10,3 +10,6 @@ def --wrapped vim [...args] {
   nvim ...$args
 }
 
+def --wrapped check [...args]  {
+  open ...$args | lines
+}
