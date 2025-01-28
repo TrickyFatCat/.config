@@ -21,3 +21,7 @@ end
 function icat --description 'alias icat=kitten icat'
     kitten icat $argv
 end
+
+function rm --description 'alias rm=rm -v'
+    command rm -v $argv
+end
