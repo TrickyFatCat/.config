@@ -1,0 +1,10 @@
+[Desktop Entry]
+Icon=/home/tricky_fat_cat/.config/godot/godot_icon.svg
+Exec=/home/tricky_fat_cat/Tools/GodotEngine/bin/Godot_v4.3-stable_linux.x86_64
+Version=1.0
+Type=Application
+Categories=Development
+Name= Godot Engine
+Terminal=false
+X-GNOME-Autostart-enabled=false
+StartupNotify=false
