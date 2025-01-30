@@ -225,6 +225,7 @@ format = '[ $symbol ]($style)'
 [battery]
 disabled = false
 charging_symbol = '󰂄'
+unknown_symbol = '󰂑'
 format = '[ $percentage $symbol ]($style)'
 
 [[battery.display]]
