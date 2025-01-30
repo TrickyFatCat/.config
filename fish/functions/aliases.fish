@@ -25,3 +25,13 @@ end
 function rm --description 'alias rm=rm -v'
     command rm -v $argv
 end
+
+function obsidian --wraps='flatpak run md.obsidian.Obsidian' --description 'alias obsidian=flatpak run md.obsidian.Obsidian'
+    flatpak run md.obsidian.Obsidian $argv
+end
+
+function notes
+    pushd ~/Documents/Notes
+    kitten @launch --type=tab --cwd=current --title="Notes" nvim $argv
+    popd
+end
