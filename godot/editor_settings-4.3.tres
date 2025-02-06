@@ -27,6 +27,8 @@ interface/theme/contrast = 0.2
 interface/theme/icon_saturation = 0.6
 interface/theme/corner_radius = 5
 interface/theme/custom_theme = "/home/tricky_fat_cat/Tools/GodotEngine/godot-minimal-theme/minimal_theme.tres"
+filesystem/directories/autoscan_project_path = "/home/tricky_fat_cat/Projects"
+filesystem/directories/default_project_path = "/home/tricky_fat_cat/Projects/Godot"
 text_editor/theme/color_theme = "Catppuccin Mocha"
 text_editor/theme/highlighting/symbol_color = Color(0.537255, 0.862745, 0.921569, 1)
 text_editor/theme/highlighting/keyword_color = Color(0.796078, 0.65098, 0.968627, 1)
@@ -64,6 +66,7 @@ text_editor/theme/highlighting/executing_line_color = Color(0.976471, 0.886275, 
 text_editor/theme/highlighting/code_folding_color = Color(0.498039, 0.517647, 0.611765, 1)
 text_editor/theme/highlighting/search_result_color = Color(0.345098, 0.356863, 0.439216, 1)
 text_editor/theme/highlighting/search_result_border_color = Color(0, 0, 0, 0)
+text_editor/behavior/files/auto_reload_scripts_on_external_change = true
 network/connection/network_mode = 1
 asset_library/available_urls = {
 "godotengine.org (Official)": "https://godotengine.org/asset-library/api"
@@ -108,7 +111,7 @@ text_editor/script_list/script_temperature_history_size = 15
 text_editor/script_list/group_help_pages = true
 text_editor/script_list/sort_scripts_by = 0
 text_editor/script_list/list_script_names_as = 0
-text_editor/external/exec_flags = "<C-\\><C-N>:n {file}<CR>{line}G{col}|"
+text_editor/external/exec_flags = "\"<C-\\><C-N>:n {file}<CR>{line}G{col}|\""
 version_control/username = ""
 version_control/ssh_public_key_path = ""
 version_control/ssh_private_key_path = ""
@@ -173,8 +176,13 @@ builtin_action_overrides = [{
 "name": "ui_up"
 }]
 metadata/script_setup_templates_dictionary = {
+"AnimatedSprite2D": "0NodeDefault",
+"Area2D": "0NodeDefault",
+"CharacterBody2D": "0CharacterBody2DBasic Movement",
 "ConfigFile": "0ObjectEmpty",
 "Node": "0NodeDefault",
-"RigidBody2D": "0NodeDefault"
+"Node2D": "0NodeDefault",
+"RigidBody2D": "0NodeDefault",
+"VisibleOnScreenNotifier2D": "0NodeDefault"
 }
 metadata/export_template_download_directory = "/home/tricky_fat_cat/.cache/godot"
