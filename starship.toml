@@ -186,7 +186,7 @@ only_detached = false
 tag_disabled = false
 style = 'fg:maroon bg:surface1'
 tag_symbol = ' 󱈤 '
-format = '[ $hash[$tag](fg:flamingo bg:surface1) ]($style)'
+format = '[ $hash[$tag](fg:flamingo bg:surface1) ]($style)'
 
 [git_status]
 conflicted = '[$count󱪗 ](fg:red bg:surface2)'
