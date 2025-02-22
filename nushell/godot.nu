@@ -1,37 +1,40 @@
-def --wrapped godot [...args] {
-  Godot_v4.3-stable_linux.x86_64 ...$args
+def godot [godot_ver?: float = 4.3, ...args] {
+  let godot_command = $"Godot_v($godot_ver)-stable_linux.x86_64"
+  ^$godot_command ...$args
 }
 
-def gdedit [project_path: path = "."] {
-  let project_file = ls $project_path | find project.godot | get name
+def gdedit [project_path?: path = "."] {
+  let project_file = glob (path | path join *.godot)
 
   if ($project_file | is-empty) {
     print "Can't find project.godot file"
     return
   }
 
-  mut project_name = (open ($project_file | get 0) | lines | filter {str contains "config/name="} | get 0)
+  mut project_name = (cat ($project_file | get 0) | filter {str contains "config/name="} | get 0)
  
-  let first_index: int = ($project_name | str index-of `"`)
-  let last_index: int = ($project_name | str length)
+  mut first_index: int = ($project_name | str index-of '"')
+  mut last_index: int = ($project_name | str length)
   $project_name = ($project_name | str substring $first_index..$last_index | str trim -c '"')
 
-  print ("Open " | append $project_name | str join)
+  mut godot_ver = (open ($project_file | get 0) | lines | find config/features | get 0)
+  $first_index = ($godot_ver | str index-of '"')
+  $last_index = ($godot_ver | str index-of ',')
+  $godot_ver = ($godot_ver | str substring $first_index..$last_index | str trim -c '"' | str trim -c ',' | str trim -r -c '"')
+  print $godot_ver
+
+  print $"Opening ($project_name) via Godot ($godot_ver)"
 
   let current_dir = pwd
   cd $project_path
 
-  let editor_title: string = ("Editor: " | append $project_name | str join "")
-  kitten @launch --type=tab --dont-take-focus --cwd=current --title=($editor_title) Godot_v4.3-stable_linux.x86_64 -e --path $project_path
+  let editor_command: string = $"Godot_v($godot_ver)-stable_linux.x86_64"
+  kitten @launch --type=tab --dont-take-focus --cwd=current --title=$"Editor ($project_name)" $editor_command -e --path $project_path
 
-  let scripts_title: string = ("Scripts: " | append $project_name | str join "")
-  kitten @launch --type=tab --dont-take-focus --cwd=current --title=($scripts_title) nvim
+  kitten @launch --type=tab --dont-take-focus --cwd=current --title=$"Src ($project_name)" $env.EDITOR
 
-  let git_folder = ls -a | find .git | where type == dir
-
-  if ($git_folder | is-not-empty) {
-    let git_title: string = ("Git: " | append $project_name | str join "")
-    kitten @launch --type=tab --dont-take-focus --cwd=current --title=($git_title) lazygit
+  if (ls -a | where name == .git | is-not-empty) {
+    kitten @launch --type=tab --dont-take-focus --cwd=current --title=$"Git ($project_name)" lazygit
   }
 
   cd $current_dir

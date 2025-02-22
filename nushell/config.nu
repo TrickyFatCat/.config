@@ -901,6 +901,7 @@ source ~/.cache/carapace/init.nu
 source ~/.config/nushell/catppuccin_mocha.nu
 source ~/.config/nushell/godot.nu
 source ~/.config/nushell/aliases.nu
+source ~/.config/nushell/utility.nu
 
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
